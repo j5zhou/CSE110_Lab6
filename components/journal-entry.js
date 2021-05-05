@@ -71,8 +71,54 @@ class JournalEntry extends HTMLElement {
     /* 
      * TODO: set the entry title, date, and content fields in this component
      */
-    
+
     // CODE GOES HERE
+    //set the attibute of the entry
+    this.setAttribute('entry',entry);
+
+    //setting the entry elements:
+    let shadow_root = this.shadowRoot.childNodes;
+    let article;
+    let article_title;
+    let article_date;
+    let article_content;
+
+    //get the article element:
+    for(let i = 0; i < shadow_root.length; i++) {
+        if(shadow_root[i].nodeName === 'ARTICLE'){
+          article = shadow_root[i];
+          break;
+        }
+    }
+
+    //console.log(shadow_root);
+    //get the subelement of the article:
+    for(let i = 0; i < article.childNodes.length; i++) {
+      if(article.childNodes[i].className === 'entry-title'){
+        article_title = article.childNodes[i];
+      }
+      if(article.childNodes[i].className === 'entry-date'){
+        article_date = article.childNodes[i];
+      }
+      if(article.childNodes[i].className === 'entry-content'){
+        article_content = article.childNodes[i];
+      }
+    }
+
+    //setting the title:
+    if(entry.title){
+      article_title.innerText=entry.title;
+    }
+
+    //setting the date:
+    if(entry.date){
+      article_date.innerText=entry.date;
+    }
+
+    //setting the content:
+    if(entry.content){
+      article_content.innerText=entry.content;
+    }
 
     if (entry.image) {
       let entryImage;
