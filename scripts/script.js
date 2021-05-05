@@ -2,7 +2,6 @@
 
 window.logCheckpoints = true // set to true/false to add/remove checkpoint logs to clear room for your own debugging
 
-
 // script.js
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.json())
     .then(entries => {
       entries.forEach((entry) => {
-        
+
         // CODE GOES HERE vvv
         let newPost = new JournalEntry();
         newPost.entry = entry;
@@ -46,15 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         /* ------------- do not edit this code, it is for your debugging purposes ------------- */
     })
-    logCheckpoints();
+    //logCheckpoints();
   })
   .catch(error => {
     console.log(`%cresult of fetch is an error: \n"${error}"`, 'color: red');
   });    
    
 });
-
-
 
 /* ------------- do not edit this code, it is for your debugging purposes ------------- */
 function logCheckpoints() {
