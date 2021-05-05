@@ -22,10 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.json())
     .then(entries => {
       entries.forEach((entry) => {
+        
+        // CODE GOES HERE vvv
         let newPost = new JournalEntry();
         newPost.entry = entry;
-
-        // CODE GOES HERE vvv
         let main = document.getElementsByTagName("main")[0];
         main.appendChild(newPost);
 

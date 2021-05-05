@@ -143,7 +143,7 @@ class JournalEntry extends HTMLElement {
 
       //append the image into the article
       article.appendChild(entryImage);
-      
+
 
       // CODE GOES HERE ^^^
 
@@ -167,6 +167,10 @@ class JournalEntry extends HTMLElement {
 
       // CODE GOES HERE vvv
       entryAudio = document.createElement('audio');
+      entryAudio.className = "entry-audio";
+      entryAudio.setAttribute("src",entry.audio);
+      entryAudio.setAttribute("controls",true);
+      article.appendChild(entryAudio);
 
 
 
