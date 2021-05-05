@@ -130,10 +130,20 @@ class JournalEntry extends HTMLElement {
        */
 
       // CODE GOES HERE vvv
+      entryImage = document.createElement("img");
+      entryImage.className="entry-image";
 
+      //if the images has src and alt:
+      if(entry.image.src){
+        entryImage.setAttribute("src",entry.image.src);
+      }
+      if(entry.image.alt){
+        entryImage.setAttribute("alt",entry.image.alt);
+      }
 
-
-
+      //append the image into the article
+      article.appendChild(entryImage);
+      
 
       // CODE GOES HERE ^^^
 
@@ -145,7 +155,7 @@ class JournalEntry extends HTMLElement {
       }
       /* ------------- do not edit this code, it is for your debugging purposes ------------- */
 
-    }
+      }
     if (entry.audio) {
       let entryAudio;
       /*
@@ -156,6 +166,7 @@ class JournalEntry extends HTMLElement {
        */
 
       // CODE GOES HERE vvv
+      entryAudio = document.createElement('audio');
 
 
 
