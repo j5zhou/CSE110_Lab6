@@ -171,7 +171,7 @@ class JournalEntry extends HTMLElement {
       entryAudio.setAttribute("src",entry.audio);
       entryAudio.setAttribute("controls",true);
       article.appendChild(entryAudio);
-
+      
 
 
 
